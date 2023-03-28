@@ -3,9 +3,9 @@ alert("please insert your age")
 
 let age
 do{
-    age = prompt("remember that you must be 18+ to use this website \nif not you must leave immediately")
-}while(age <=17){
-//aca voy a usar un input para que solo pueda ser un valor numerico, pero por ahora como dijo el profesor asumo que el usuario solo puede poner numeros     
+    age = parseInt( prompt("remember that you must be 18+ to use this website \nif not you must leave immediately"))
+}while(age <=17 || isNaN(age)){
+
 }
 
 const nombre = prompt("Please insert your name")
