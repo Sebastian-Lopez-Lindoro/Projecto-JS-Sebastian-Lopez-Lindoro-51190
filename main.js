@@ -1,55 +1,86 @@
+//Ranma 1/2 website interactive simulator
+
 alert("Welcome to Ranma 1/2 website")
 alert("please insert your age")
 
-let age
-do{
-    age = parseInt( prompt("remember that you must be 18+ to use this website \nif not you must leave immediately"))
-}while(age <=17 || isNaN(age)){
+//Age verification
 
+let age
+const ageVerification = () => {
+    do{
+        age = parseInt(prompt("remember that you must be 18+ to use this website \nif not you must leave immediately"))
+    }while(age <=17 || age >=99 || isNaN(age))
 }
 
-const nombre = prompt("Please insert your name")
-alert("Welcome user " + nombre + "! enjoy your stay \nPlease choose a category to browse")
-let decision
+ageVerification()
 
-function askingClient(){  
+alert("You may enter the website")
+
+//User name creation
+
+let userName
+const userNameCreation = () => {
+    do{
+        userName = prompt("Please insert your name").toLocaleLowerCase()
+    }while(userName == "" || userName == " ")
+}
+
+userNameCreation()
+
+alert("Welcome user " + userName + "! enjoy your stay \nPlease choose a category to browse")
+
+//object creation/constructor
+
+class Inventory {
+    constructor(name, price, stock){
+        this.name = name
+        this.price = price
+        this.stock = stock
+    }
+}
+
+const mangapack = new Inventory("mangapack", 360, 55)
+const animepack = new Inventory("animepack", 300, 35)
+const ovapack   = new Inventory("ovapack", 200, 25)
+const moviepack = new Inventory("moviepack", 250, 15)
+
+//Array
+
+const itemList = []
+
+//Main funtion
+
+let decision
+const askingClient = () => {  
+    alert("what pack do you wish to purchase")
     decision = prompt ("Manga, " + " Anime, " + " OVA, " + " Movie, " + " Exit").toLowerCase()
+    
     switch (decision){
-        case "manga": 
-           let volume = prompt("insert Manga volume you want \nvalue must be 1 to 36")
-           if(volume <= 0 || volume >=37){
-               alert("sorry, value range must be 1 to 36")
-           }else if (volume >= 1 || volume <=36){
-               alert("thank you! Manga issue of choice was added to your cart")
-           }break
+        case "manga":
+                if(decision == "manga"){
+                        itemList.push(" one " + mangapack.name + ", value " + mangapack.price + " dollars ")                      
+                }       alert("thank you! Manga pack was added to your cart")
+                break
         case "anime":
-           let boxset = prompt("insert Anime boxset you want \nvalue must be 1 to 7")
-           if(boxset <= 0 || boxset >=8){
-               alert("sorry, value range must be 1 to 7")
-           }else if (boxset >= 1 || boxset <=7){
-               alert("thank you! Anime boxset of choice was added to your cart")
-           }break
+                if(decision == "anime"){
+                        itemList.push(" one " + animepack.name + ", value " + animepack.price + " dollars ")
+                }       alert("thank you! Anime pack was added to your cart")                     
+                break
         case "ova":
-           let chapter = prompt("insert OVA chapter you want \nvalue must be 1 to 13")
-           if(chapter <= 0 || chapter >=14){
-               alert("sorry, value range must be 1 to 13")
-           }else if (chapter >= 1 || chapter >=13){
-               alert("thank you! OVA chapter of choice was added to your cart")
-           }break
+                if(decision == "ova"){
+                        itemList.push(" one " + ovapack.name + ", value " + ovapack.price + " dollars ")
+                }       alert("thank you! OVA pack was added to your cart") 
+                break
         case "movie":
-           let movie = prompt("insert Movie you want \nvalue must be 1 to 2")
-           if(movie <= 0 || movie >=3 ){
-               alert("sorry, value range must be 1 to 2")               
-           }else if(movie <= 1 || movie >=2){
-               alert("thank you! Movie of choice was added to your cart")
-           }break
+                if(decision == "movie"){
+                        itemList.push(" one " + moviepack.name + ", value " + moviepack.price + " dollars ")
+                }       alert("thank you! Movie pack was added to your cart") 
+                break
         case "exit":
-            let exit = prompt("please enter exit again to leave shop")
-            if(exit == "exit"){
-                alert("you will exit the shop! come again soon! bye bye!")
-            }else if(exit != "exit")
-                alert("please refresh the website and try again")
-            break
+                if(decision == "exit"){
+                        alert("you will exit the shop! come again soon! bye bye!")
+                }
+                break
         default: alert("sorry, value must be Manga or Anime or OVA or Movie or Exit")
    }
 }
@@ -58,4 +89,10 @@ while(decision != "exit"){
     askingClient()
 }
 
+//Alert and Console log output
+
+alert("this are the items in your shopping cart")
+alert(itemList)
+console.log(itemList)
+alert("thank for shopping at Ranma 1/2 shop! have a nice day! <3")
 
