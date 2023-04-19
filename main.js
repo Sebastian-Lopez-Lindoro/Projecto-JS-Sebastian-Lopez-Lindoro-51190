@@ -96,3 +96,7 @@ alert(itemList)
 console.log(itemList)
 alert("thank for shopping at Ranma 1/2 shop! have a nice day! <3")
 
+//Alert with forEach method
+
+itemList.forEach(function(myItemlist) {alert(myItemlist)})
+
