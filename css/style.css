@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-image: linear-gradient(35deg, black, blue, red, red, blue, black);
+    padding-top: 1.5rem;    
+}
+
+body {
+    font-family: "Braah One", sans-serif;
+    background-color: rgb(255, 255, 255);
+    max-width: 2200px;
+    
+  }
+
+footer {
+    background-image: linear-gradient(35deg, black, blue, red, red, blue, black);
+    background-size: cover;
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 2px 2px #1437c1;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 70px;
+    padding: 0.5rem;
+}
+
+h2 {
+    text-align: center;
+    text-shadow: 2px 1px #030303;
+    color: rgb(255, 0, 0);
+    font-size: 55px;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    text-align: center;
+    text-shadow: 2px 1px #030303;
+    color: rgb(255, 0, 0);
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 2.0rem;
+    margin-bottom: 0.5rem;
+}
+
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    margin: auto;   
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    margin: auto;
+}
+
+.container2 div {
+    display: flex;
+    flex-direction: column;
+}
+
+.container3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    margin: auto;
+}
+
+.container4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    margin: auto;
+}
+
+.container5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(35deg, black, blue, red, red, blue, black);
+    border-radius: 10px;
+    margin: auto;
+    padding: 2.0rem;
+    width: 25rem;
+}
+
+.container5 .form {
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    border-radius: 5px;
+    gap: 1rem;
+}
+
+input {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+    border: none;
+}
+
+input::placeholder {
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+    border: none;
+}
+
+textarea {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+
+
+}
+
+textarea::placeholder {
+    text-align: center;
+    color: red;
+
+}
+
+.container5 .form_button {
+    color: red;
+    width: 6rem;
+    margin: auto;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.container1 .manga_img{
+    width: 10rem;
+    padding: 0.3rem;
+    transition: transform 1500ms ease-in-out;
+}
+
+.manga_img:hover{
+    transform: scale(1.3);
+}
+
+.container2 .anime_img {
+    width: 15.5rem;
+    padding: 0.5rem;
+    transition: transform 1500ms ease-in-out;   
+}
+
+.anime_img:hover {
+    transform: scale(1.2);
+}
+
+.container3 .ovamovie_img {
+    width: 16rem;
+    transition: transform 1500ms ease-in-out;
+}
+
+.ovamovie_img:hover {
+    transform: scale(1.2);
+}
+
+.container4 .complete_img {
+    width: 14rem;
+    transition: transform 1500ms ease-in-out;
+}
+
+.complete_img:hover {
+    transform: scale(1.2);
+}
+
+.cart_button {
+    background-color: rgb(35, 248, 7);
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    margin-top: 1.5rem;
+}
+
+.cart_button:hover {
+    background-color: yellow;
+    color: black;
+    transition: 1000ms ease;
+    transform: rotate(360deg);
+}
+
+.header_p {
+    text-align: center;
+    text-shadow: 1px 1px #1437c1;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 25px;
+    padding: 0.5rem;
+}
+
+.section_p {
+    text-align: center;
+    text-shadow: 1px 1px rgb(220, 51, 14) ;
+    color: rgb(9, 35, 166);
+    padding-bottom: 2rem;
+}
+
+.copyrights{
+    text-align: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px #030303;
+}

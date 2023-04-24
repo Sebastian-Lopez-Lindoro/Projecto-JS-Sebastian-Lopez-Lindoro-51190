@@ -1,3 +1,5 @@
+/*
+
 //Ranma 1/2 website interactive simulator
 
 alert("Welcome to Ranma 1/2 website")
@@ -100,3 +102,4 @@ alert("thank for shopping at Ranma 1/2 shop! have a nice day! <3")
 
 itemList.forEach(function(myItemlist) {alert(myItemlist)})
 
+*/
