@@ -98,44 +98,40 @@ h3 {
     border-radius: 10px;
     margin: auto;
     padding: 2.0rem;
-    width: 25rem;
+    width: 20rem;
 }
 
-.container5 .form {
+.container5 .form_style {
     display: flex;
     flex-direction: column;
-    width: 20rem;
+    width: auto;
     border-radius: 5px;
     gap: 1rem;
 }
 
 input {
-    text-align: center;
     font-size: 12px;
     font-weight: bold;
     color: red;
-    border: none;
+    padding: 5px;
+    
 }
 
 input::placeholder {
-    text-align: center;
     font-size: 12px;
-    font-weight: bold;
-    color: red;
+    color: rgba(255, 0, 0, 0.462);
     border: none;
 }
 
 textarea {
-    text-align: center;
     font-weight: bold;
     color: red;
-
-
+    padding: 5px;
 }
 
 textarea::placeholder {
     text-align: center;
-    color: red;
+    color: rgba(255, 0, 0, 0.462);
 
 }
 
@@ -149,6 +145,7 @@ textarea::placeholder {
     padding: 7px;
     font-size: 15px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .container1 .manga_img{
@@ -198,6 +195,7 @@ textarea::placeholder {
     font-weight: bold;
     color: white;
     margin-top: 1.5rem;
+    cursor: pointer;
 }
 
 .cart_button:hover {
@@ -228,4 +226,9 @@ textarea::placeholder {
     text-align: center;
     color: rgb(255, 255, 255);
     text-shadow: 1px 1px #030303;
+}
+
+
+.itemStyle {
+    color: red;
 }
