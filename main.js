@@ -130,8 +130,9 @@ mangaButton.addEventListener("click", () => {
         const manga = document.createElement("div")
         manga.className = "itemStyle"
         manga.innerHTML = `
-                          <p>${mangaPack.name}</p>
-                          <p>${mangaPack.price}</p>      
+                        <img class="cart_img" src="img/manga pack.jpg" alt="">
+                        <p>"manga pack" ${mangaPack.price}</p>
+                        <button class="delete_button">DELETE</button>     
         `
         cart_cards.append(manga)
         alert(cart)   

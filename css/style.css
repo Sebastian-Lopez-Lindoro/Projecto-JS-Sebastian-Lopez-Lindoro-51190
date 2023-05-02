@@ -228,7 +228,33 @@ textarea::placeholder {
     text-shadow: 1px 1px #030303;
 }
 
+#cart_cards {
+    background-color: #1437c1;
+    color: #030303;
+    width: 30rem;
+    margin: auto;
+    padding: 2rem;
+}
+
+#cart_cards .itemStyle {
+        justify-content: center;
+}
+
+.cart_img {
+    
+}
 
 .itemStyle {
-    color: red;
+    
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+
+}
+
+.itemStyle .delete_button {
+    background-color: yellow;
+    color: blue;
 }
