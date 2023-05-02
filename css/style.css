@@ -52,6 +52,29 @@ h3 {
     margin-bottom: 0.5rem;
 }
 
+.nav {
+    text-align: center;
+    padding: 1rem;
+    color: white;
+}
+.nav ul {
+    list-style: none;  
+    
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: yellow;
+    padding: 0.6rem 0.6rem 0rem 0.6rem;
+    margin-left: 1rem;
+    font-size: large;
+    background-color: rgba(0, 51, 255, 0.372); 
+    border-radius: 6px;
+}
+
+.nav ul li a:hover {
+    color: rgb(8, 1, 0);
+}
 
 .container1 {
     display: flex;
@@ -228,33 +251,56 @@ textarea::placeholder {
     text-shadow: 1px 1px #030303;
 }
 
+
+
 #cart_cards {
-    background-color: #1437c1;
+    background-image: linear-gradient(35deg, black, blue, red, red, blue, black);
+    border-radius: 7px;
     color: #030303;
-    width: 30rem;
+    width: 15rem;
     margin: auto;
-    padding: 2rem;
+    padding: 0.1rem;
 }
 
 #cart_cards .itemStyle {
-        justify-content: center;
+        justify-content: center;       
 }
 
 .cart_img {
-    
+    width: 6rem;
+    border-radius: 5px;
+}
+
+.cart_p {
+    font-size: large;
+    margin-top: 1.5rem;
+    text-shadow: 2px 1px #030303;
+    color: rgb(64, 0, 255);
+}
+
+.cart_p2{
+    font-size: larger;
+    text-shadow: 2px 1px #030303;
+    color: rgb(64, 0, 255);
 }
 
 .itemStyle {
-    
-    background-color: red;
+    background-color: rgba(77, 83, 75, 0.772);
+    border-radius: 7px;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 1.5rem;
     align-items: center;
+    margin: 1rem;
 
 }
 
 .itemStyle .delete_button {
-    background-color: yellow;
-    color: blue;
+    background-color: red;
+    color: white;
+    margin-top: 1rem; 
+    padding: 0.5rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor:pointer ;
 }

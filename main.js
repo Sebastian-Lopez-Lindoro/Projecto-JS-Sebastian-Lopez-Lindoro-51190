@@ -111,16 +111,17 @@ const ovaMovieData = []
 const completeData = []
 
 class Inventory {
-        constructor(name, price){
+        constructor(id, name, price){
+            this.id = id
             this.name = name
             this.price = price
         }
     }
     
-    const mangaPack = new Inventory("Manga pack", 360)
-    const animePack = new Inventory("Anime pack", 300)
-    const ovaMoviePack  = new Inventory("OVA and Movie pack", 200)
-    const completePack = new Inventory("Complete pack", 250)
+    const mangaPack = new Inventory(1, "Manga pack", 360)
+    const animePack = new Inventory(2, "Anime pack", 300)
+    const ovaMoviePack  = new Inventory(3, "OVA and Movie pack", 200)
+    const completePack = new Inventory(4, "Complete pack", 250)
 
 const mangaButton = document.getElementById("manga_button")
 
@@ -131,11 +132,12 @@ mangaButton.addEventListener("click", () => {
         manga.className = "itemStyle"
         manga.innerHTML = `
                         <img class="cart_img" src="img/manga pack.jpg" alt="">
-                        <p>"manga pack" ${mangaPack.price}</p>
-                        <button class="delete_button">DELETE</button>     
+                        <p class="cart_p">Manga Pack</p>
+                        <p class="cart_p2">$ ${mangaPack.price}</p>
+                        <button class="delete_button" id="btn">REMOVE</button>
         `
         cart_cards.append(manga)
-        alert(cart)   
+        //alert(cart)   
         localStorage.setItem("mangaStorage", JSON.stringify(mangaData))     
 })
 
@@ -147,10 +149,13 @@ animeButton.addEventListener("click", () =>{
         const anime = document.createElement("div")
         anime.className = "itemStyle"
         anime.innerHTML = `
-                          <p>ITEM ENTRO</p>      
+                        <img class="cart_img" src="img/anime pack.jpg" alt="">
+                        <p class="cart_p">Anime Pack</p>
+                        <p class="cart_p2">$ ${animePack.price}</p>
+                        <button class="delete_button">REMOVE</button>     
         `
         cart_cards.append(anime)
-        alert(cart)
+        //alert(cart)
         localStorage.setItem("animeStorage", JSON.stringify(animeData))
 })
 
@@ -162,10 +167,13 @@ ovaMovieButton.addEventListener("click", () =>{
         const ovamovie = document.createElement("div")
         ovamovie.className = "itemStyle"
         ovamovie.innerHTML = `
-                          <p>ITEM ENTRO</p>      
+                        <img class="cart_img" src="img/ovamovie pack.jpg" alt="">
+                        <p class="cart_p">OVA & Movie Pack</p>
+                        <p class="cart_p2">$ ${ovaMoviePack.price}</p>
+                        <button class="delete_button">REMOVE</button>      
         `
         cart_cards.append(ovamovie)
-        alert(cart)
+        //alert(cart)
         localStorage.setItem("ovaMovieStorage", JSON.stringify(ovaMovieData))
 })
 
@@ -178,10 +186,13 @@ completeButton.addEventListener("click", () =>{
         const complete = document.createElement("div")
         complete.className = "itemStyle"
         complete.innerHTML = `
-                          <p>ITEM ENTRO</p>      
+                        <img class="cart_img" src="img/complete pack.jpg" alt="">
+                        <p class="cart_p">Complete Pack</p>
+                        <p class="cart_p2">$ ${completePack.price}</p>
+                        <button class="delete_button">REMOVE</button>      
         `
         cart_cards.append(complete)
-        alert(cart)
+        //alert(cart)
         localStorage.setItem("completeStorage",JSON.stringify(completeData))
 })
 
@@ -200,3 +211,11 @@ console.log(completeStorage)
 
 console.log(cart)
 
+
+//revisar porque no lee el boton mas tarde (error null)
+/*
+const deleteManga = document.getElementById("btn")
+deleteManga.addEventListener("onclick", ()=>{
+        alert("hola")
+})
+*/
