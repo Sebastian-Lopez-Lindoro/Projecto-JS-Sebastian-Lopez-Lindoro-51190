@@ -304,3 +304,10 @@ textarea::placeholder {
     border-radius: 5px;
     cursor:pointer ;
 }
+
+.info{
+    color: white;
+    background:black;
+    padding-bottom: 0.3rem;
+    background-image: linear-gradient(35deg, black, blue, red, red, blue, black);
+}
