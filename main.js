@@ -25,6 +25,90 @@ async function showTermsAndConditions() {
       }
       
       showTermsAndConditions();
+
+let cart = []
+const mangaData = []
+const animeData = []
+const ovaMovieData = []
+const completeData = []
+let id = 0
+
+class Inventory {
+        constructor(id, name, price){
+            this.id = id
+            this.name = name
+            this.price = price          
+        }
+    }
+
+    const mangaPack = new Inventory(id, "Manga pack", 360)
+    const animePack = new Inventory(id, "Anime pack", 300)
+    const ovaMoviePack  = new Inventory(id, "OVA and Movie pack", 200)
+    const completePack = new Inventory(id, "Complete pack", 250)
+
+
+const mangaButton = document.getElementById("manga_button")
+
+mangaButton.addEventListener("click", () => {
+        mangaPack.id++
+        cart.push(mangaPack)
+        mangaData.push(mangaPack)
+        Toastify({
+                className: "info",
+                text: "Product added to the cart!",
+                duration: 2000
+        }).showToast()
+        
+        localStorage.setItem("mangaStorage", JSON.stringify(mangaData))             
+})
+
+const animeButton = document.getElementById("anime_button")
+
+animeButton.addEventListener("click", () =>{
+        cart.push(animePack)
+        animeData.push(animePack)
+        Toastify({
+                className: "info",
+                text: "Product added to the cart!",
+                duration: 2000
+        }).showToast()
+
+        localStorage.setItem("animeStorage", JSON.stringify(animeData))
+})
+
+const ovaMovieButton = document.getElementById("ovamovie_button")
+
+ovaMovieButton.addEventListener("click", () =>{
+        cart.push(ovaMoviePack)
+        ovaMovieData.push(ovaMoviePack)
+        Toastify({
+                className: "info",
+                text: "Product added to the cart!",
+                duration: 2000
+        }).showToast()
+
+        localStorage.setItem("ovaMovieStorage", JSON.stringify(ovaMovieData))
+})
+
+    
+const completeButton = document.getElementById("complete_button")
+
+completeButton.addEventListener("click", () =>{
+        cart.push(completePack)
+        completeData.push(completePack)
+        Toastify({
+                className: "info",
+                text: "Product added to the cart!",
+                duration: 2000
+        }).showToast()
+
+        localStorage.setItem("completeStorage",JSON.stringify(completeData))
+})
+
+console.log(cart)
+
+////////////////////////////////////// CODIGO VIEJO
+
 /*
 
 //Ranma 1/2 website interactive simulator
@@ -130,81 +214,3 @@ alert("thank for shopping at Ranma 1/2 shop! have a nice day! <3")
 itemList.forEach(function(myItemlist) {alert(myItemlist)})
 
 */
-
-let cart = []
-const mangaData = []
-const animeData = []
-const ovaMovieData = []
-const completeData = []
-
-class Inventory {
-        constructor(id, name, price){
-            this.id = id
-            this.name = name
-            this.price = price
-        }
-    }
-    
-    const mangaPack = new Inventory(1, "Manga pack", 360)
-    const animePack = new Inventory(2, "Anime pack", 300)
-    const ovaMoviePack  = new Inventory(3, "OVA and Movie pack", 200)
-    const completePack = new Inventory(4, "Complete pack", 250)
-
-
-
-const mangaButton = document.getElementById("manga_button")
-
-mangaButton.addEventListener("click", () => {
-        cart.push(mangaPack)
-        mangaData.push(mangaPack) 
-        Toastify({
-                className: "info",
-                text: "Product added to the cart!",
-                duration: 2000
-        }).showToast()
-        
-        localStorage.setItem("mangaStorage", JSON.stringify(mangaData))          
-})
-
-const animeButton = document.getElementById("anime_button")
-
-animeButton.addEventListener("click", () =>{
-        cart.push(animePack)
-        animeData.push(animePack)
-        Toastify({
-                className: "info",
-                text: "Product added to the cart!",
-                duration: 2000
-        }).showToast()
-
-        localStorage.setItem("animeStorage", JSON.stringify(animeData))
-})
-
-const ovaMovieButton = document.getElementById("ovamovie_button")
-
-ovaMovieButton.addEventListener("click", () =>{
-        cart.push(ovaMoviePack)
-        ovaMovieData.push(ovaMoviePack)
-        Toastify({
-                className: "info",
-                text: "Product added to the cart!",
-                duration: 2000
-        }).showToast()
-
-        localStorage.setItem("ovaMovieStorage", JSON.stringify(ovaMovieData))
-})
-
-    
-const completeButton = document.getElementById("complete_button")
-
-completeButton.addEventListener("click", () =>{
-        cart.push(completePack)
-        completeData.push(completePack)
-        Toastify({
-                className: "info",
-                text: "Product added to the cart!",
-                duration: 2000
-        }).showToast()
-
-        localStorage.setItem("completeStorage",JSON.stringify(completeData))
-})

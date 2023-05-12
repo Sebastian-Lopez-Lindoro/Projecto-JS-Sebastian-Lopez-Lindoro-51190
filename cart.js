@@ -175,3 +175,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }).showToast()
   })
 })
+
+/////////////////
+
+
+const totalValue = document.getElementById("total_value")
+let totalPrice = 0;
+
+// Retrieve mangaStorage data from local storage and update the totalPrice
+const mangaStorage = JSON.parse(localStorage.getItem("mangaStorage"))
+if (mangaStorage) {
+  mangaStorage.forEach(item => totalPrice += item.price)
+}
+
+// Retrieve animeStorage data from local storage and update the totalPrice
+const animeStorage = JSON.parse(localStorage.getItem("animeStorage"))
+if (animeStorage) {
+  animeStorage.forEach(item => totalPrice += item.price)
+}
+
+// Retrieve ovaMovieStorage data from local storage and update the totalPrice
+const ovaMovieStorage = JSON.parse(localStorage.getItem("ovaMovieStorage"))
+if (ovaMovieStorage) {
+  ovaMovieStorage.forEach(item => totalPrice += item.price)
+}
+
+// Retrieve completeStorage data from local storage and update the totalPrice
+const completeStorage = JSON.parse(localStorage.getItem("completeStorage"))
+if (completeStorage) {
+  completeStorage.forEach(item => totalPrice += item.price)
+}
+
+totalValue.innerHTML = `Total: $${totalPrice.toFixed(2)}`
+
+/////////
+
