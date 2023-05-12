@@ -10,9 +10,17 @@ const sentForm = document.getElementById("form")
                 message:info["message"].value
         }
         comboRequest.push(file)
-        sentForm.reset()   
+        sentForm.reset()
+           
         localStorage.setItem("comboStorage", JSON.stringify(comboRequest))
+        
+        Toastify({
+                className: "info",
+                text: "Product added to the cart!",
+                duration: 2000
+        }).showToast()
 })
+
 
 const comboStoratge = JSON.parse(localStorage.getItem("comboStorage"))
 console.log(comboStoratge)

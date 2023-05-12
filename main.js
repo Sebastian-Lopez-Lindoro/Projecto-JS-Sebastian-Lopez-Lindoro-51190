@@ -1,5 +1,5 @@
 async function showTermsAndConditions() {
-        const termsAccepted = localStorage.getItem("termsAccepted");
+        const termsAccepted = localStorage.getItem("termsAccepted")
       
         if (!termsAccepted) {
           const { value: accept } = await Swal.fire({
@@ -171,16 +171,12 @@ const animeButton = document.getElementById("anime_button")
 animeButton.addEventListener("click", () =>{
         cart.push(animePack)
         animeData.push(animePack)
-        const anime = document.createElement("div")
-        anime.className = "itemStyle"
-        anime.innerHTML = `
-                        <img class="cart_img" src="img/anime pack.jpg" alt="">
-                        <p class="cart_p">Anime Pack</p>
-                        <p class="cart_p2">$ ${animePack.price}</p>
-                        <button class="delete_button">REMOVE</button>     
-        `
-        cart_cards.append(anime)
-        //alert(cart)
+        Toastify({
+                className: "info",
+                text: "Product added to the cart!",
+                duration: 2000
+        }).showToast()
+
         localStorage.setItem("animeStorage", JSON.stringify(animeData))
 })
 
@@ -189,16 +185,12 @@ const ovaMovieButton = document.getElementById("ovamovie_button")
 ovaMovieButton.addEventListener("click", () =>{
         cart.push(ovaMoviePack)
         ovaMovieData.push(ovaMoviePack)
-        const ovamovie = document.createElement("div")
-        ovamovie.className = "itemStyle"
-        ovamovie.innerHTML = `
-                        <img class="cart_img" src="img/ovamovie pack.jpg" alt="">
-                        <p class="cart_p">OVA & Movie Pack</p>
-                        <p class="cart_p2">$ ${ovaMoviePack.price}</p>
-                        <button class="delete_button">REMOVE</button>      
-        `
-        cart_cards.append(ovamovie)
-        //alert(cart)
+        Toastify({
+                className: "info",
+                text: "Product added to the cart!",
+                duration: 2000
+        }).showToast()
+
         localStorage.setItem("ovaMovieStorage", JSON.stringify(ovaMovieData))
 })
 
@@ -208,101 +200,11 @@ const completeButton = document.getElementById("complete_button")
 completeButton.addEventListener("click", () =>{
         cart.push(completePack)
         completeData.push(completePack)
-        const complete = document.createElement("div")
-        complete.className = "itemStyle"
-        complete.innerHTML = `
-                        <img class="cart_img" src="img/complete pack.jpg" alt="">
-                        <p class="cart_p">Complete Pack</p>
-                        <p class="cart_p2">$ ${completePack.price}</p>
-                        <button class="delete_button">REMOVE</button>      
-        `
-        cart_cards.append(complete)
-        //alert(cart)
+        Toastify({
+                className: "info",
+                text: "Product added to the cart!",
+                duration: 2000
+        }).showToast()
+
         localStorage.setItem("completeStorage",JSON.stringify(completeData))
 })
-
-/*const carrito = JSON.parse(localStorage.getItem("mangaStorage"))
-console.log(carrito)
-carrito.forEach(cards => {
-        const manga = document.createElement("div")
-        manga.id = "manga"
-        manga.className = "itemStyle"
-        manga.innerHTML = `
-                        <img class="cart_img" src="img/manga pack.jpg" alt="">
-                        <p class="cart_p">Manga Pack</p>
-                        <p class="cart_p2">$ ${mangaPack.price}</p>
-                        <button id="manga_delete" class="delete_button">REMOVE</button>
-        `
-        cart_cards.append(manga)
-        console.log(cards)
-});
-
-const deleteManga = ()=>{
-        
-        const mangaDelete = document.getElementById("manga_delete")
-        mangaDelete.addEventListener("click", ()=>{
-        document.getElementById("manga").remove()
-        localStorage.removeItem("mangaStorage")
-        })
-}
-deleteManga()*/
-
-/*const carrito = JSON.parse(localStorage.getItem("mangaStorage"));
-console.log(carrito);
-
-carrito.forEach((mangaPack, index) => {
-  const manga = document.createElement("div");
-  const mangaId = `manga_${index}`; // Generar un ID único para cada elemento manga
-  manga.id = mangaId;
-  manga.className = "itemStyle";
-  manga.innerHTML = `
-    <img class="cart_img" src="img/manga pack.jpg" alt="">
-    <p class="cart_p">Manga Pack</p>
-    <p class="cart_p2">$ ${mangaPack.price}</p>
-    <button id="manga_delete_${index}" class="delete_button">REMOVE</button>
-  `;
-  cart_cards.append(manga);
-  console.log(mangaPack);
-
-  // Llamar a la función deleteManga después de crear cada elemento manga
-  deleteManga(mangaId, index);
-});
-
-function deleteManga(mangaId, index) {
-  const mangaDelete = document.getElementById(`manga_delete_${index}`);
-  mangaDelete.addEventListener("click", () => {
-    document.getElementById(mangaId).remove();
-    localStorage.removeItem("mangaStorage");
-  });
-}*/
-
-document.addEventListener("DOMContentLoaded", () => {
-        const carrito = JSON.parse(localStorage.getItem("mangaStorage"));
-        console.log(carrito);
-      
-        carrito.forEach((mangaPack, index) => {
-          const manga = document.createElement("div");
-          const mangaId = `manga_${index}`; // Generar un ID único para cada elemento manga
-          manga.id = mangaId;
-          manga.className = "itemStyle";
-          manga.innerHTML = `
-            <img class="cart_img" src="img/manga pack.jpg" alt="">
-            <p class="cart_p">Manga Pack</p>
-            <p class="cart_p2">$ ${mangaPack.price}</p>
-            <button id="manga_delete_${index}" class="delete_button">REMOVE</button>
-          `;
-          cart_cards.append(manga);
-          console.log(mangaPack);
-      
-          // Llamar a la función deleteManga después de crear cada elemento manga
-          deleteManga(mangaId, index);
-        });
-      
-        function deleteManga(mangaId, index) {
-          const mangaDelete = document.getElementById(`manga_delete_${index}`);
-          mangaDelete.addEventListener("click", () => {
-            document.getElementById(mangaId).remove();
-            localStorage.removeItem("mangaStorage");
-          });
-        }
-      });

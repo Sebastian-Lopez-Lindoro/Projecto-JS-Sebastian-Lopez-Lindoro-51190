@@ -68,8 +68,9 @@ h3 {
     padding: 0.6rem 0.6rem 0rem 0.6rem;
     margin-left: 1rem;
     font-size: large;
-    background-color: rgba(0, 51, 255, 0.372); 
+    background-color: rgb(29, 52, 144); 
     border-radius: 6px;
+    z-index: 1;
 }
 
 .nav ul li a:hover {
@@ -253,8 +254,7 @@ textarea::placeholder {
 
 
 
-#cart_cards {
-    background-image: linear-gradient(35deg, black, blue, red, red, blue, black);
+#cart_cards {   
     border-radius: 7px;
     color: #030303;
     width: 15rem;
@@ -263,7 +263,8 @@ textarea::placeholder {
 }
 
 #cart_cards .itemStyle {
-        justify-content: center;       
+    justify-content: center;
+    background-image: linear-gradient(35deg, black, blue, red, red, blue, black);
 }
 
 .cart_img {
@@ -292,7 +293,7 @@ textarea::placeholder {
     padding: 1.5rem;
     align-items: center;
     margin: 1rem;
-
+    margin-bottom: 1rem;
 }
 
 .itemStyle .delete_button {
@@ -309,5 +310,28 @@ textarea::placeholder {
     color: white;
     background:black;
     padding-bottom: 0.3rem;
-    background-image: linear-gradient(35deg, black, blue, red, red, blue, black);
+    background-image: linear-gradient(135deg, black, blue, red, red, blue, black);
+}
+
+.total_cart{
+    display: flex;
+    justify-content: center;
+}
+
+.button_cart {
+    font-family: "Braah One", sans-serif;
+    text-decoration: none;
+    color: yellow;
+    padding: 0.6rem 0.6rem 0rem 0.6rem;
+    margin-left: 1rem;
+    font-size: large;
+    background-color: rgb(20, 52, 181); 
+    border-radius: 6px;
+    border: none;
+
+}
+
+.button_cart:hover {
+    color: rgb(8, 1, 0);
+    
 }
