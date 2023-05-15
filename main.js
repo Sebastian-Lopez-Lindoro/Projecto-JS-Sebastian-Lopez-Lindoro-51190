@@ -26,47 +26,66 @@ async function showTermsAndConditions() {
       
       showTermsAndConditions();
 
-let cart = []
-const mangaData = []
-const animeData = []
-const ovaMovieData = []
-const completeData = []
-let id = 0
-
-class Inventory {
-        constructor(id, name, price){
-            this.id = id
-            this.name = name
-            this.price = price          
+      let cart = []
+      let mangaData = []
+      let animeData = []
+      let ovaMovieData = []
+      let completeData = []
+      let id = 0
+      
+      class Inventory {
+        constructor(name, price) {
+          this.id = id++
+          this.name = name
+          this.price = price
         }
-    }
-
-    const mangaPack = new Inventory(id, "Manga pack", 360)
-    const animePack = new Inventory(id, "Anime pack", 300)
-    const ovaMoviePack  = new Inventory(id, "OVA and Movie pack", 200)
-    const completePack = new Inventory(id, "Complete pack", 250)
-
-
-const mangaButton = document.getElementById("manga_button")
-
-mangaButton.addEventListener("click", () => {
-        mangaPack.id++
-        cart.push(mangaPack)
-        mangaData.push(mangaPack)
+      }
+      
+      const mangaPack = new Inventory("Manga pack", 360)
+      const animePack = new Inventory("Anime pack", 300)
+      const ovaMoviePack = new Inventory("OVA and Movie pack", 200)
+      const completePack = new Inventory("Complete pack", 750)
+      
+      const mangaButton = document.getElementById("manga_button")
+      
+      mangaButton.addEventListener("click", () => {
+        const item = new Inventory("Manga pack", 360);
+        cart.push(item)
+        mangaData.push({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+        })
+      
         Toastify({
-                className: "info",
-                text: "Product added to the cart!",
-                duration: 2000
+          className: "info",
+          text: "Product added to the cart!",
+          duration: 2000,
         }).showToast()
-        
-        localStorage.setItem("mangaStorage", JSON.stringify(mangaData))             
+      
+        localStorage.setItem("mangaStorage", JSON.stringify(mangaData))
+      })
+      
+
+      window.addEventListener("load", () => {
+                const storedMangaData = localStorage.getItem("mangaStorage")
+                if (storedMangaData) {
+                mangaData = JSON.parse(storedMangaData)
+        }
 })
+      
 
 const animeButton = document.getElementById("anime_button")
 
 animeButton.addEventListener("click", () =>{
-        cart.push(animePack)
-        animeData.push(animePack)
+        const item = new Inventory("Anime Pack", 300)
+        cart.push(item)
+        animeData.push({
+          id: item.id,
+          name: item.name,
+          price: item.price,
+        })
+
         Toastify({
                 className: "info",
                 text: "Product added to the cart!",
@@ -76,11 +95,25 @@ animeButton.addEventListener("click", () =>{
         localStorage.setItem("animeStorage", JSON.stringify(animeData))
 })
 
+        window.addEventListener("load", () => {
+        const storedAnimeData = localStorage.getItem("animeStorage")
+        if (storedAnimeData) {
+          animeData = JSON.parse(storedAnimeData)
+        }
+})
+
+
 const ovaMovieButton = document.getElementById("ovamovie_button")
 
 ovaMovieButton.addEventListener("click", () =>{
-        cart.push(ovaMoviePack)
-        ovaMovieData.push(ovaMoviePack)
+        const item = new Inventory ("OVA and Movie pack", 200)
+        cart.push(item)
+        ovaMovieData.push({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+              })
+        
         Toastify({
                 className: "info",
                 text: "Product added to the cart!",
@@ -90,12 +123,26 @@ ovaMovieButton.addEventListener("click", () =>{
         localStorage.setItem("ovaMovieStorage", JSON.stringify(ovaMovieData))
 })
 
+        window.addEventListener("load", () => {
+                const storedOvaData = localStorage.getItem("ovaMovieStorage")
+                if (storedOvaData) {
+                ovaMovieData = JSON.parse(storedOvaData)
+        }
+})      
+
+
     
 const completeButton = document.getElementById("complete_button")
 
 completeButton.addEventListener("click", () =>{
-        cart.push(completePack)
-        completeData.push(completePack)
+        const item = new Inventory("Complete pack", 750)
+        cart.push(item)
+        completeData.push({
+                id: item.id,
+                name: item.name,
+                price: item.price,
+        })
+        
         Toastify({
                 className: "info",
                 text: "Product added to the cart!",
@@ -105,7 +152,13 @@ completeButton.addEventListener("click", () =>{
         localStorage.setItem("completeStorage",JSON.stringify(completeData))
 })
 
-console.log(cart)
+        window.addEventListener("load", () => {
+                const storedCompleteData = localStorage.getItem("completeStorage")
+                if (storedCompleteData) {
+                completeData = JSON.parse(storedCompleteData)
+        }
+})
+
 
 ////////////////////////////////////// CODIGO VIEJO
 
