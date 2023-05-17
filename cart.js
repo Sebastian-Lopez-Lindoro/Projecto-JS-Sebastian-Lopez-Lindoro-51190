@@ -106,3 +106,69 @@ document.addEventListener("DOMContentLoaded", () => {
  
    updateTotalValue()
  })
+
+
+ document.addEventListener("DOMContentLoaded", () => {
+   const emptyCart = document.getElementById("cart_pur")
+   const totalValueElement = document.getElementById("total_value")
+ 
+   emptyCart.addEventListener("click", () => {
+     document.getElementById("cart_cards").remove()
+     localStorage.removeItem("mangaStorage")
+     localStorage.removeItem("animeStorage")
+     localStorage.removeItem("ovaMovieStorage")
+     localStorage.removeItem("completeStorage")
+ 
+     updateTotalValue()
+ 
+     Toastify({
+       className: "info",
+       text: "Thank you for your purchase",
+       duration: 2000
+     }).showToast()
+   })
+ 
+   function updateTotalValue() {
+     totalValueElement.textContent = "$ 0"
+     
+     const cart = JSON.parse(localStorage.getItem("mangaStorage")) || []
+     const totalValue = cart.reduce((total, mangaPack) => total + mangaPack.price, 0)
+     
+     totalValueElement.textContent = `$ ${totalValue}`
+   }
+ 
+   updateTotalValue()
+ })
+
+
+ document.addEventListener("DOMContentLoaded", () => {
+   const emptyCart = document.getElementById("cart_emp")
+   const totalValueElement = document.getElementById("total_value")
+ 
+   emptyCart.addEventListener("click", () => {
+     document.getElementById("cart_cards").remove()
+     localStorage.removeItem("mangaStorage")
+     localStorage.removeItem("animeStorage")
+     localStorage.removeItem("ovaMovieStorage")
+     localStorage.removeItem("completeStorage")
+ 
+     updateTotalValue()
+ 
+     Toastify({
+       className: "info",
+       text: "Cart is now empty!",
+       duration: 2000
+     }).showToast()
+   })
+ 
+   function updateTotalValue() {
+     totalValueElement.textContent = "$ 0"
+     
+     const cart = JSON.parse(localStorage.getItem("mangaStorage")) || []
+     const totalValue = cart.reduce((total, mangaPack) => total + mangaPack.price, 0)
+     
+     totalValueElement.textContent = `$ ${totalValue}`
+   }
+ 
+   updateTotalValue()
+ })
