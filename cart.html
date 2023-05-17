@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.jpg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Shopping Cart</title>
 </head>
 <body>
     <header>
         <h1>Ranma 1/2 Shop</h1>
         <p class="header_p">Rumiko Takahashi's Masterpiece</p>
         <p class="header_p">is one click away</p>   
-        <nav class="nav">
+        <nav class="nav_button">
             <ul>
                 <li>
                     <a href="./index.html">STORE</a>
@@ -30,7 +31,10 @@
 
         </div>
         <h3>Total Cart Value is</h3>
-        <p id="total_value" class=""></p>
+        <div class="cart_div">
+         <p id="total_value" class="total_value_cart"></p>
+        </div>
+        
         <div id="total_div" class="total_cart">  
             <button id="cart_pur" class="button_cart" >PURCHASE</button>
             <button id="cart_emp" class="button_cart" >EMPTY CART</button>

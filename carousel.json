@@ -1,0 +1,20 @@
+[
+   {
+      "name": "Everything Ranma 1/2",
+      "image": "slide1.jpg",
+      "class": "active"
+      
+   },
+   {
+      "name": "Certified Originals",
+      "image": "slide2.jpg",
+      "class":""
+      
+   },
+   {
+      "name": "Global Shipping",
+      "image": "slide3.jpg",
+      "class":""
+      
+   }
+]
